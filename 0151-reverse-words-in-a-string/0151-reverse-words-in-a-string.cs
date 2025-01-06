@@ -1,7 +1,11 @@
 public class Solution {
     public string ReverseWords(string s) {
         string[] words = s.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-        Array.Reverse(words);
-        return string.Join(" ", words);
+        string result = "";
+        for(int i = words.Length - 1; i >= 0 ; i--){
+            result += words[i];
+            if(i > 0) result += " ";
+        }
+        return result;
     }
 }
